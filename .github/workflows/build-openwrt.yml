@@ -71,12 +71,6 @@ jobs:
     - name: Update feeds
       run: cd openwrt && ./scripts/feeds update -a
 
-    - name: Add luci-app-ssr-plus
-      run: |
-        cd openwrt
-        git clone https://github.com/fw876/helloworld.git
-        mv ./helloworld ./package/lean
-
     - name: Update luci-app-netdata
       run: |
         cd openwrt

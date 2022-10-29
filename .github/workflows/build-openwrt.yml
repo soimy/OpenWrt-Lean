@@ -78,6 +78,13 @@ jobs:
         git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git 
         mv ./luci-theme-argon ./package/lean
 
+    - name: Add luci-app-passwall
+      run: |
+        cd openwrt
+        git clone -b luci https://github.com/xiaorouji/openwrt-passwall.git
+        mv ./openwrt-passwall/luci-app-passwall ./package/lean
+        rm -rf ./openwrt-passwall
+
     - name: Install feeds
       run: cd openwrt && ./scripts/feeds install -a
 

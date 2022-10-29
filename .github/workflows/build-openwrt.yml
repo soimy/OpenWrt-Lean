@@ -71,18 +71,11 @@ jobs:
     - name: Update feeds
       run: cd openwrt && ./scripts/feeds update -a
 
-    - name: Update luci-app-netdata
-      run: |
-        cd openwrt
-        rm -r ./feeds/luci/applications/luci-app-netdata
-        git clone https://github.com/sirpdboy/luci-app-netdata.git
-        mv ./luci-app-netdata ./package/lean
-
     - name: Update luci-theme-argon
       run: |
         cd openwrt
         rm -r ./feeds/luci/themes/luci-theme-argon
-        git clone https://github.com/jerrykuku/luci-theme-argon.git
+        git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git 
         mv ./luci-theme-argon ./package/lean
 
     - name: Install feeds

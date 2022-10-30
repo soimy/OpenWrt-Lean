@@ -75,7 +75,7 @@ jobs:
       run: |
         cd openwrt
         git clone -b testing https://github.com/fw876/helloworld.git ssrp
-        mv ./ssrp/luci-app-ssr-plus ./package/lean
+        mv ./ssrp/luci-app-ssr-plus ./package/lean/passwall
         rm -rf ./ssrp
 
     - name: Add luci-app-passwall

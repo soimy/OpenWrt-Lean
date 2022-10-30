@@ -71,6 +71,14 @@ jobs:
     - name: Update feeds
       run: cd openwrt && ./scripts/feeds update -a
 
+    - name: Add luci-app-ssr-plus
+      run: |
+        cd openwrt
+        mkdir ./package/lean/ssrp
+        git clone -b testing https://github.com/fw876/helloworld.git ssrp
+        mv ./ssrp/* ./package/lean/ssrp
+        rm -rf ./ssrp
+
     - name: Add luci-app-passwall
       run: |
         cd openwrt
@@ -81,14 +89,6 @@ jobs:
         git clone -b luci https://github.com/xiaorouji/openwrt-passwall.git passwall
         mv ./passwall/* ./package/lean/passwall
         rm -rf ./passwall
-
-    - name: Add luci-app-ssr-plus
-      run: |
-        cd openwrt
-        mkdir ./package/lean/helloworld
-        git clone -b testing https://github.com/fw876/helloworld.git helloworld
-        mv ./helloworld/* ./package/lean/helloworld
-        rm -rf ./helloworld
 
     - name: Update luci-theme-argon
       run: |

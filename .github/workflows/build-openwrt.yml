@@ -74,19 +74,16 @@ jobs:
     - name: Add luci-app-ssr-plus
       run: |
         cd openwrt
-        mkdir ./package/lean/passwall
         git clone -b testing https://github.com/fw876/helloworld.git ssrp
-        mv ./ssrp/luci-app-ssr-plus ./package/lean/passwall
+        mv ./ssrp ./package/lean
         rm -rf ./ssrp
 
-    - name: Add luci-app-passwall
+    - name: Add xray-core
       run: |
         cd openwrt
+        rm -rf ./package/lean/ssrp/xray-core
         git clone -b packages https://github.com/xiaorouji/openwrt-passwall.git passwall
-        mv ./passwall/* ./package/lean/passwall
-        rm -rf ./passwall
-        git clone -b luci https://github.com/xiaorouji/openwrt-passwall.git passwall
-        mv ./passwall/* ./package/lean/passwall
+        mv ./passwall/xray-core ./package/lean/ssrp
         rm -rf ./passwall
 
     - name: Update luci-theme-argon

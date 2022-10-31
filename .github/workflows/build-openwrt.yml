@@ -78,7 +78,7 @@ jobs:
         mv ./ssrp ./package/lean
         rm -rf ./ssrp
 
-    - name: Add xray-core
+    - name: Update xray-core
       run: |
         cd openwrt
         rm -rf ./package/lean/ssrp/xray-core

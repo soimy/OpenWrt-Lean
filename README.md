@@ -4,7 +4,7 @@ Default login address: **192.168.10.1**, username: **root**, password: **passwor
 luci-app-cpufreq
 luci-app-filetransfer
 luci-app-firewall
-luci-app-ssr-plus
+luci-app-ssr-plus 20221026
     |Include ChinaDNS-NG
     |Include Hysteria 1.2.2
     |Include Xray-core 1.6.1

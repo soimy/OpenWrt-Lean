@@ -71,27 +71,30 @@ jobs:
     - name: Update feeds
       run: cd openwrt && ./scripts/feeds update -a
 
-    - name: Add luci-app-ssr-plus
+    - name: Update luci-app-ssr-plus
       run: |
         cd openwrt
-        git clone -b testing https://github.com/fw876/helloworld.git ssrp
-        mv ./ssrp ./package/lean
-        rm -rf ./ssrp
+        rm -rf ./feeds/helloworld/luci-app-ssr-plus
+        git clone -b testing --single-branch https://github.com/fw876/helloworld.git helloworld
+        mv ./helloworld/luci-app-ssr-plus ./feeds/helloworld
+        rm -rf ./helloworld
 
-    - name: Update xray-core
+    - name: Update hysteria xray-core
       run: |
         cd openwrt
-        rm -rf ./package/lean/ssrp/xray-core
-        git clone -b packages https://github.com/xiaorouji/openwrt-passwall.git passwall
-        mv ./passwall/xray-core ./package/lean/ssrp
+        rm -rf ./feeds/helloworld/hysteria
+        rm -rf ./feeds/helloworld/xray-core
+        git clone -b packages --single-branch https://github.com/xiaorouji/openwrt-passwall.git passwall
+        mv ./passwall/hysteria ./feeds/helloworld
+        mv ./passwall/xray-core ./feeds/helloworld
         rm -rf ./passwall
 
     - name: Update luci-theme-argon
       run: |
         cd openwrt
         rm -rf ./feeds/luci/themes/luci-theme-argon
-        git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git 
-        mv ./luci-theme-argon ./package/lean
+        git clone -b 18.06 --single-branch https://github.com/jerrykuku/luci-theme-argon.git 
+        mv ./luci-theme-argon ./feeds/luci/themes
 
     - name: Install feeds
       run: cd openwrt && ./scripts/feeds install -a

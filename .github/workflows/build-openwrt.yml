@@ -71,24 +71,6 @@ jobs:
     - name: Update feeds
       run: cd openwrt && ./scripts/feeds update -a
 
-    - name: Update luci-app-ssr-plus
-      run: |
-        cd openwrt
-        rm -rf ./feeds/helloworld/luci-app-ssr-plus
-        git clone -b testing --single-branch https://github.com/fw876/helloworld.git helloworld
-        mv ./helloworld/luci-app-ssr-plus ./feeds/helloworld
-        rm -rf ./helloworld
-
-    - name: Update hysteria xray-core
-      run: |
-        cd openwrt
-        rm -rf ./feeds/helloworld/hysteria
-        rm -rf ./feeds/helloworld/xray-core
-        git clone -b packages --single-branch https://github.com/xiaorouji/openwrt-passwall.git passwall
-        mv ./passwall/hysteria ./feeds/helloworld
-        mv ./passwall/xray-core ./feeds/helloworld
-        rm -rf ./passwall
-
     - name: Update luci-theme-argon
       run: |
         cd openwrt

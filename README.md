@@ -4,9 +4,9 @@ Default login address: **192.168.10.1**, username: **root**, password: **passwor
 luci-app-cpufreq
 luci-app-filetransfer
 luci-app-firewall
-luci-app-ssr-plus (20221118)
-    |Include Xray-core 1.6.4
-    |Include Hysteria 1.3.0
+luci-app-ssr-plus (20221128)
+    |Include Xray-core 1.6.5
+    |Include Hysteria 1.3.1
 luci-app-turboacc
     |Include Flow Offload
     |Include BBR CCA

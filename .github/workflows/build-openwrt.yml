@@ -71,6 +71,14 @@ jobs:
     - name: Update feeds
       run: cd openwrt && ./scripts/feeds update -a
 
+    - name: Update luci-theme-argon
+      run: |
+        cd openwrt
+        rm -rf ./feeds/luci/themes/luci-theme-argon
+        rm -rf ./package/emortal/luci-theme-argon
+        git clone -b master --single-branch https://github.com/jerrykuku/luci-theme-argon.git 
+        mv ./luci-theme-argon ./feeds/luci/themes
+
     - name: Install feeds
       run: cd openwrt && ./scripts/feeds install -a
 

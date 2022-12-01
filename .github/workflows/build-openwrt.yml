@@ -76,7 +76,7 @@ jobs:
         cd openwrt
         rm -rf ./feeds/luci/themes/luci-theme-argon
         rm -rf ./package/emortal/luci-theme-argon
-        git clone -b master --single-branch https://github.com/jerrykuku/luci-theme-argon.git 
+        git clone -b 18.06 --single-branch https://github.com/jerrykuku/luci-theme-argon.git 
         mv ./luci-theme-argon ./feeds/luci/themes
 
     - name: Install feeds

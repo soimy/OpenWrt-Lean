@@ -5,7 +5,8 @@ luci-app-cpufreq
 luci-app-filetransfer
 luci-app-firewall
 luci-app-ssr-plus (20221201)
-    |Include Xray-core 1.6.5
+    |V2ray-core Selection (Xray-core 1.6.5)
+    |Include ChinaDNS-NG
     |Include Hysteria 1.3.1
 luci-app-turboacc
     |Include Flow Offload

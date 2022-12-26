@@ -1,6 +1,6 @@
-address: **192.168.10.1**<br>
-username: **root**<br>
-password: **password**
+地址: **192.168.10.1**<br>
+用户名: **root**<br>
+密码: **password**
 
 ```
 autocore-arm

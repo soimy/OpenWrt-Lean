@@ -1,4 +1,6 @@
-Default login address: **192.168.10.1**, username: **root**, password: **password**.
+address: **192.168.10.1**<br>
+username: **root**<br>
+password: **password**
 
 ```
 autocore-arm

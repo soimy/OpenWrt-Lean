@@ -8,8 +8,8 @@ automount
 luci-app-cpufreq
 luci-app-filetransfer
 luci-app-firewall
-luci-app-ssr-plus (20221224)
-    |V2ray-core Selection (Xray-core 1.6.6-2)
+luci-app-ssr-plus (20221226)
+    |V2ray-core Selection (Xray-core 1.7.0)
     |Include ChinaDNS-NG
     |Include Hysteria 1.3.2
 luci-app-turboacc
